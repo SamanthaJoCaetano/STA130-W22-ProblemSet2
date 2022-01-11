@@ -1,0 +1,180 @@
+---
+title: "STA130 -- Winter 2022"
+author: "Your Name & Student Number"
+subtitle: Module 2 Problem Set
+output:
+  pdf_document: default
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(openintro)
+```
+
+
+# Instructions
+
+## How do I hand in these problems for the Thursday deadline ?
+
+Your complete .Rmd file that you create for these practice problems AND the resulting pdf (i.e., the one you 'Knit to PDF' from your .Rmd file) must be uploaded into a Quercus assignment (link: [https://q.utoronto.ca/courses/253019/assignments/792571](https://q.utoronto.ca/courses/253019/assignments/792571)) by 11:59 a.m. ET, on Thursday, January 20, 2022. Late problem sets are not accepted.
+
+
+
+# Problem set grading
+
+There are two parts to your problem set. Part one is R based: there is 1 mandatory question in part one, and additional optional questions. Optional R based questions are highly recommended as they will help prepare you for larger assessments (and help improve your R skills, of course!); but, they are part of the grading for the weekly problem sets. Part two is (more) writing based: all of part two is mandatory. We recommend you use a word processing software like Microsoft Word to check for grammar errors in your written work. Note: there can be issues copying from Word to R Markdown so it may be easier to write in this file first and then copy the text to Word. Then you can make any changes flagged in Word directly in this file.
+
+
+# Part 1
+
+
+## Question 1 [Required]
+
+The `superbowl_ads.csv` file contains data for a sample of superbowl ads,
+
+You will be working with the following variables featured in the csv file:
+ - `year` (double) Superbowl year
+ - `brand`	(character)	Brand for commercial
+ - `funny`	(logical)	Contains humor
+ - `show_product_quickly`	(logical))	Shows product quickly
+ - `celebrity`	(logical) Contains celebrity
+ - `danger`	(logical)	Contains danger
+ - `view_count`	(double)	Youtube view count
+ - `like_count`	(double)	Youtube like count
+ - `dislike_count`	(double)	Youtube dislike count
+ - `superbowl_ads_dot_com_url`	(character)	Superbowl ad URL
+
+Source: [https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-03-02/readme.md](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-03-02/readme.md)
+
+```{r, message=FALSE}
+library(tidyverse) # Load the tidyverse package so it is available to use 
+superbowl <- read_csv("superbowl_ads.csv")
+```
+
+### (a) Use the `glimpse()` function to view properties of the `superbowl` data set. How many rows and columns are there? How many observations does it include? How many variables are measured for each observation? 
+
+```{r}
+
+```
+
+*<Type your answer to the written question here (note that R code does not run outside of the grey R code chunks).>*
+
+
+
+### (b) Create 3 histograms to explore the distribution of `view_count` at the same time: (i) one with 2 bins, (ii) one with 8 bins, and (iii) one with 50 bins; make sure to specify meaningful axis labels where appropriate. Which of these histograms is most appropriate to describe the distribution of the average number of players at the same time? Why? Write a few sentences describing the distribution based on the histogram you chose as most appropriate.
+
+```{r}
+
+```
+
+
+
+
+
+### (c) Construct two plots to visualize the distribution of `brand` and one of these other categorical variables:  `funny`, `danger` or `celebrity` from the superbowl ads data and describe the distribution in 1-2 sentences; make sure to specify meaningful axis labels where appropriate. Hint: If you choose a categorical variable with many different categories, you may find it useful to use `coord_flip()` to flip the bars horizontally and/or change the options in the R code chunk to make the plot large (ex: {r, fig.height=15, fig.width=5}).
+
+
+```{r}
+
+
+```
+
+
+
+
+
+### (d) Construct a set of two boxplots showing visual summaries of the distribution of number of likes (`like_count`) for whether ads included a celebrity or not (`celebrity`); make sure to specify meaningful axis labels where appropriate. Write 3-4 sentences comparing these distributions.
+
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+## Question 2 [Optional]
+
+The `births` data set is part of the `openintro` package. It consists of random sample of 100 births for babies in North Carolina where the mother was not a smoker and another 50 where the mother was a smoker.   Type `?births` in the R console for more information about the data and to see the definition of each variable. The code below loads the required libraries for this question and provides a glimpse of the `births` data frame.
+  
+```{r, include=FALSE}
+library(tidyverse)
+library(openintro)
+```
+
+```{r}
+glimpse(births)
+```
+  
+  
+### (a) Choose two categorical variables and plot the distribution of each one (in seperate plots). Identify whether each of these variables is a nominal or ordinal categorical variable. Write one or two sentences interpreting each plot.  
+
+```{r, warning=FALSE, message=FALSE, fig.height=3, fig.width=4, fig.align='center'}
+
+```
+
+
+
+
+### (b) Choose a quantitative variable and plot its distribution.  Identify whether the variable you selected is continuous or discrete, and write 2-3 sentences describing the distribution.
+
+```{r, warning=FALSE, message=FALSE, fig.width=3, fig.height=2, fig.align='center'}
+
+```
+
+
+
+### (c) Construct a plot that shows the relationship between birth weight (`weight`) and mother's smoking status (`smoke`); make sure to specify meaningful axis labels where appropriate.  
+
+```{r}
+
+
+```
+
+
+
+\newpage
+
+# Part 2 [Required]
+
+## Writing prompt:  
+
+Pretend that you are on the phone with your friend, and you want to share some of the cool new data visualization techniques that you have been learning in STA130. Pick one of the above graphs and prepare a small paragraph on how you would describe the graph to your friend (keeping in mind that they cannot see the graph). Make sure you include at least 2 words/phrases from your vocabulary list. It is also important to keep in mind that the person you are talking to has not taken STA130, therefore they will not be as familiar with the statistical vocabulary as you are. Therefore, make sure the explain any terms you use in plain language.  
+
+ 
+
+### When describing a figure, it is important to:  
+
+- Describe the data source  
+- State the type of graph  
+- Identify what are on the x- and y-axis (if appropriate)  
+- Describe the distribution  
+- Make note of potential outliers  
+
+ 
+### Vocabulary List  
+
+- Where are the data centered (approximate values if available)  
+- How much spread (relative to what?)  
+- Shape: symmetric, left-skewed, right-skewed  
+- The tails of the distribution (heavy-tailed or thin-tailed)  
+- Modes: where, how many, unimodal, bimodal, multimodal, uniform  
+- Outliers, extreme values  
+- Frequency (which category occurred the most or least often; data concentrated near a particular value or category)  
+- Mean, median, mode  
+- Standard deviation, interquartile range  
+
+ 
+
+### Some general reminders  
+
+- Try to not send more than 20 minutes on the prompt.  
+- Aim for more than 200 words but less than 500 words.  
+- Use full sentences. 
+- Grammar is *not* the main focus of the assessment, but it is important that you communicate in a clear and professional manner. I.e., no slang or emojis should appear. 
+- Be specific. A good principle when responding to a writing prompt in STA130 is to assume that your audience is not aware of the subject matter (or in this case has not read the syllabus). Therefore, in this case, you need to properly communicate what the objective is putting it in your own words (paraphrasing). You CANNOT just copy the learning objective and put it in quotation marks.  
